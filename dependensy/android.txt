@@ -1,0 +1,1 @@
+npm i --save @react-navigation/native react-native-screens react-native-safe-area-context @react-navigation/native-stack react-native-svg @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-native-fontawesome mobx mobx-react-lite

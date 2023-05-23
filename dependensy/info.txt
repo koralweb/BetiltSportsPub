@@ -1,0 +1,20 @@
+npx react-native init BetiltSportsPub
+cd BetiltSportsPub //Переходим в созданную папку проекта
+// Заходишь в почту и принимаешь приглашение в git
+
+npx react-native run-android //Запускаем, проверяем работоспособность
+
+// Останавливаем все процессы (CTRL+C в терминале), выключаем эмулятор
+
+git init
+git remote add origin https://github.com/koralweb/BetiltSportsPub.git
+
+// Удаляем эти 3 файла:
+  -- App.tsx
+  -- .gitignore
+  -- android/app/src/main/java/com/BetiltSportsPub/MainActivity.java
+
+git branch -M dev
+git pull origin dev
+
+npx react-native run-android //Запускаем, проверяем работоспособность
