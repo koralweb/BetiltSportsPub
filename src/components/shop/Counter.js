@@ -12,11 +12,11 @@ const Counter = ({count, setCount}) => {
   return (
     <View style={styles.cont}>
       <TouchableOpacity onPress={() => changeCount(false)}>
-        <Text>-</Text>
+        <Text style={styles.cnt}>-</Text>
       </TouchableOpacity>
-      <Text>{count}</Text>
+      <Text style={styles.cnt}>{count}</Text>
       <TouchableOpacity onPress={() => changeCount(true)}>
-        <Text>+</Text>
+        <Text style={styles.cnt}>+</Text>
       </TouchableOpacity>
     </View>
   );
@@ -25,6 +25,19 @@ const Counter = ({count, setCount}) => {
 const styles = StyleSheet.create({
   cont: {
     flexDirection: 'row',
+   
+    
+  },
+  cnt: {
+    fontSize: 20,
+    fontWeight: 600,
+    padding: 5,
+    backgroundColor: "#FF0000",
+    color: "white",
+    
+   
+    
+
   },
 });
 

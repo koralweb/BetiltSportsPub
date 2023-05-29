@@ -15,9 +15,14 @@ const Product = ({prod, setUpdateState}) => {
   return (
     <View style={styles.cont}>
       <TouchableOpacity onPress={removeProductFromCart}>
-        <FontAwesomeIcon icon={'close'} />
+        <View style={styles.item}>
+        <Text  style={styles.title}>{prod.name}</Text>
+        <FontAwesomeIcon  style={styles.icon} icon={'close'} />
+
+        </View>
+        
       </TouchableOpacity>
-      <Text>{prod.name}</Text>
+      
       <Image source={prod.img} style={styles.img} />
       <Counter prod={prod} />
     </View>
@@ -26,13 +31,37 @@ const Product = ({prod, setUpdateState}) => {
 
 const styles = StyleSheet.create({
   cont: {
-    borderWidth: 1,
+    borderWidth: 0.2,
     marginHorizontal: 10,
+    marginTop: 10,
+    borderRadius: 10,
+    
   },
   img: {
-    width: 60,
-    height: 60,
+    width: 90,
+    height: 90,
   },
+  title: {
+   color: "black",
+   paddingLeft: 100,
+   fontSize: 17,
+
+  },
+  item: {
+    flex: 1,
+    flexDirection: "row",
+    justifyContent: "space-between",
+
+  },
+  icon: {
+    width: 30,
+    height: 30,
+    paddingLeft: 30,
+    paddingTop: 30,
+    color: "grey",
+
+  },
+ 
 });
 
 export default observer(Product);

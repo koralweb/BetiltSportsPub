@@ -22,7 +22,7 @@ const ShopScreen = ({navigation}) => {
     });
     return arr.map(el => (
       <TouchableOpacity key={el} onPress={() => setType(el)}>
-        <Text>{el}</Text>
+        <Text style={styles.text}>{el}</Text>
       </TouchableOpacity>
     ));
   };
@@ -55,6 +55,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 15,
     width: '100%',
+  },
+  text: {
+    color: 'red',
+    fontSize: 17,
+    fontWeight: 500,
+
   },
   productsCont: {
     flex: 1,
