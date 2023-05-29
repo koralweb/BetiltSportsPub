@@ -18,19 +18,19 @@ const MenuComponent = ({navigation}) => {
   return (
     <View style={styles.menu}>
       <TouchableOpacity onPress={() => clickOnMenuItem('Shop')}>
-        <Text>Магазин</Text>
+        <Text style={styles.text}>Магазин</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => clickOnMenuItem('Booking')}>
-        <Text>Бронь столика</Text>
+        <Text style={styles.text}>Бронь столика</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => clickOnMenuItem('Matches')}>
-        <Text>Трансляции</Text>
+        <Text style={styles.text}>Трансляции</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => clickOnMenuItem('Contacts')}>
-        <Text>Контакты</Text>
+        <Text style={styles.text}>Контакты</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => clickOnMenuItem('Cart')}>
-        <Text>Корзина</Text>
+        <Text style={styles.text}>Корзина</Text>
       </TouchableOpacity>
     </View>
   );
@@ -45,6 +45,16 @@ const styles = StyleSheet.create({
     width: Dimensions.get('window').width,
     backgroundColor: '#fff',
     zIndex: 100,
+  },
+  text: {
+    fontSize: 30,
+    fontWeight: 600,
+    paddingLeft: 25,
+    paddingTop: 25,
+    color: 'black',
+    borderBottomWidth: 0.5,
+    borderColor: 'grey',
+
   },
 });
 

@@ -7,16 +7,16 @@ const HomeScreen = ({navigation}) => {
     <View>
       <Header navigation={navigation} />
       <TouchableOpacity onPress={() => navigation.push('Shop')}>
-        <Text>Магазин</Text>
+        <Text style={styles.list}>Магазин</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.push('Booking')}>
-        <Text>Бронь столика</Text>
+        <Text style={styles.list}>Бронь столика</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.push('Matches')}>
-        <Text>Трансляции</Text>
+        <Text style={styles.list}>Трансляции</Text>
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.push('Contacts')}>
-        <Text>Контакты</Text>
+        <Text style={styles.list}>Контакты</Text>
       </TouchableOpacity>
       <Image source={require('../assets/Logo.png')} style={styles.logo} />
     </View>
@@ -24,7 +24,24 @@ const HomeScreen = ({navigation}) => {
 };
 
 const styles = StyleSheet.create({
-  logo: {width: 423 / 4, height: 153 / 4},
+  logo: {width: 423 / 4, height: 153 / 4, alignSelf: "center", marginTop: 300,},
+  list: {
+    fontSize: 20,
+    alignSelf: "center",
+    fontWeight: 500,
+    backgroundColor: "#006600",
+    width: 300,
+    height: 45,
+    paddingLeft: 80,
+    color: "white",
+    marginTop: 30,
+    alignItems: "center",
+    paddingTop: 5,
+
+
+  }
+
+
 });
 
 export default HomeScreen;
