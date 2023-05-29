@@ -6,6 +6,9 @@ npx react-native run-android //Запускаем, проверяем работ
 
 // Останавливаем все процессы (CTRL+C в терминале), выключаем эмулятор
 
+// Подключаем зависимости
+npm i --save @react-navigation/native react-native-screens react-native-safe-area-context @react-navigation/native-stack react-native-svg @fortawesome/fontawesome-svg-core @fortawesome/free-solid-svg-icons @fortawesome/react-native-fontawesome mobx mobx-react-lite
+
 git init
 git remote add origin https://github.com/koralweb/BetiltSportsPub.git
 
