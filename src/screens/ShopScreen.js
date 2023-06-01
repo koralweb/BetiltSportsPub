@@ -55,12 +55,12 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     paddingHorizontal: 15,
     width: '100%',
+    marginTop: 10,
   },
   text: {
     color: 'red',
     fontSize: 17,
     fontWeight: 500,
-
   },
   productsCont: {
     flex: 1,

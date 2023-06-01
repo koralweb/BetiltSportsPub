@@ -1,85 +1,107 @@
-import React from 'react';
-import {Text, View, TextInput, TouchableOpacity, StyleSheet, Image} from 'react-native';
+import React, {useEffect, useState} from 'react';
+import {
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {observer} from 'mobx-react-lite';
 import Header from '../components/HeaderComponent';
+import productsList from '../mobx/productsList';
 
-const BookingScreen = ({navigation}) => {
+const BookingScreen = ({navigation, route}) => {
+  const [fromCart, setFromCart] = useState(false);
+
+  useEffect(() => {
+    if (route.params) {
+      setFromCart(route.params.fromCart);
+    }
+  }, []);
+
+  const order = () => {
+    fromCart && productsList.removeAllProducts();
+    navigation.push('ThankYou');
+  };
+
   return (
     <View>
       <Header navigation={navigation} />
 
-      <Text style={style.title}>Бронирование</Text>
+      <Text style={style.title}>
+        {fromCart ? 'Оформление заказа' : 'Бронирование'}
+      </Text>
 
       <View style={style.input}>
-        <TextInput placeholder="Имя"/>
-         <TouchableOpacity style={style.btn}>
+        <TextInput placeholder="Имя" style={style.textInput} />
+        <TouchableOpacity style={style.btn}>
           <Text style={style.btntext}>Имя</Text>
-         </TouchableOpacity>
-      </View>
-
-      <View style={style.input}>
-        <TextInput placeholder="+000 000"/>
-         <TouchableOpacity style={style.btn}>
-          <Text style={style.btntext}>Номер телефона</Text>
-         </TouchableOpacity>
-      </View>
-
-      <View style={style.input}>
-        <TextInput placeholder="Электронная почта"/>
-         <TouchableOpacity style={style.btn}>
-          <Text style={style.btntext}>Почта</Text>
-         </TouchableOpacity>
-      </View>
-
-      <View style={style.input}>
-        <TextInput placeholder="Дата и время"/>
-         <TouchableOpacity style={style.btn}>
-          <Text style={style.btntext}>Дата и время</Text>
-         </TouchableOpacity>
-      </View>
-      
-
-         <TouchableOpacity
-          style={style.checkout}
-          onPress={() => navigation.push('Checkout')}>
-          <Text style={style.button}>Забронировать</Text>
         </TouchableOpacity>
-        <Image source={require('../assets/Logo.png')} style={style.logo} />
-       
+      </View>
 
+      <View style={style.input}>
+        <TextInput placeholder="+000 000" style={style.textInput} />
+        <TouchableOpacity style={style.btn}>
+          <Text style={style.btntext}>Телефон</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={style.input}>
+        <TextInput placeholder="Электронная почта" style={style.textInput} />
+        <TouchableOpacity style={style.btn}>
+          <Text style={style.btntext}>Почта</Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={style.input}>
+        <TextInput placeholder="Дата и время" style={style.textInput} />
+        <TouchableOpacity style={style.btn}>
+          <Text style={style.btntext}>Дата и время</Text>
+        </TouchableOpacity>
+      </View>
+
+      <TouchableOpacity style={style.checkout} onPress={order}>
+        <Text style={style.button}>
+          {fromCart ? 'Оформить' : 'Забронировать'}
+        </Text>
+      </TouchableOpacity>
+      <Image source={require('../assets/Logo.png')} style={style.logo} />
     </View>
   );
 };
 
-const style= StyleSheet.create({
-  cont: {
-
-  },
+const style = StyleSheet.create({
+  cont: {},
   title: {
     fontSize: 30,
     fontWeight: 700,
-    color: "black",
-    alignSelf: "center",
+    color: 'black',
+    alignSelf: 'center',
     margin: 20,
   },
   input: {
     flexDirection: 'row',
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
     borderWidth: 1,
-    width: 350,
+    width: '96%',
     height: 40,
     marginBottom: 10,
-    marginLeft: 20,
+    marginHorizontal: '2%',
     borderColor: '#006600',
     color: '#909090',
     fontSize: 15,
     paddingLeft: 15,
     marginTop: 5,
   },
+  textInput: {
+    flex: 1,
+    marginRight: 5,
+  },
   logo: {
-    width: 423 / 4, 
-    height: 153 / 4, 
-    alignSelf: "center", 
+    width: 423 / 4,
+    height: 153 / 4,
+    alignSelf: 'center',
     marginTop: 150,
   },
   checkout: {
@@ -100,22 +122,20 @@ const style= StyleSheet.create({
     alignSelf: 'center',
   },
   btn: {
-   marginRight: 5,
-   marginTop: 5,
+    marginRight: 5,
+    marginVertical: 5,
   },
   btntext: {
     borderWidth: 1,
     borderColor: 'grey',
     borderRadius: 4,
-    width: 100, 
-    height: 25, 
+    width: 100,
+    height: 25,
     alignSelf: 'center',
     marginTop: 2,
-    color: "black",
+    color: 'black',
     textAlign: 'center',
   },
-
-
 });
 
 export default observer(BookingScreen);

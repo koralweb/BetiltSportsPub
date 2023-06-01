@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import {
+  Image,
   ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
   View,
-  Image,
 } from 'react-native';
 import {observer} from 'mobx-react-lite';
 import Header from '../components/HeaderComponent';
@@ -30,75 +30,78 @@ const CartScreen = ({navigation}) => {
   };
 
   return (
-    <View>
+    <>
       <Header navigation={navigation} />
 
-      <ScrollView>
+      <ScrollView style={{paddingBottom: 20}}>
         <Text style={styles.title}>Корзина</Text>
         {empty ? (
           <>
-            <Text style={styles.text}>Ваша корзина пустая - перейти в меню?</Text>
+            <Text style={styles.text}>
+              Ваша корзина пустая - перейти в меню?
+            </Text>
             <TouchableOpacity onPress={() => navigation.push('Shop')}>
-              <Text style={styles.btn}>Меню</Text>
-              <Image source={require('../assets/Logo.png')} style={styles.logo} />
+              <Text style={styles.menu}>Меню</Text>
             </TouchableOpacity>
+            <Image source={require('../assets/Logo.png')} style={styles.logo} />
           </>
         ) : (
           <>
-            <View style={styles.cont}>{renderProducts()}</View>
-            <TouchableOpacity style={styles.btn}>
-              <Text style={styles.button}>Подтвердить</Text>
-            </TouchableOpacity>
+            <View style={styles.cont}>
+              {renderProducts()}
+              <TouchableOpacity
+                style={styles.btn}
+                onPress={() => navigation.push('Booking', {fromCart: true})}>
+                <Text style={styles.button}>Подтвердить</Text>
+              </TouchableOpacity>
+            </View>
           </>
         )}
       </ScrollView>
-    
-    </View>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   cont: {
     margin: 10,
-    
-    
+    paddingBottom: 30,
+    flex: 1,
   },
   title: {
     fontSize: 30,
     fontWeight: 700,
-    color: "black",
-    alignSelf: "center",
+    color: 'black',
+    alignSelf: 'center',
     marginTop: 20,
   },
   text: {
     fontSize: 25,
     fontWeight: 500,
-    alignSelf: "center",
+    alignSelf: 'center',
     margin: 15,
   },
   btn: {
     fontSize: 25,
     fontWeight: 900,
-    color: "white",
-    alignSelf: "center",
-    margin: 10,
-    backgroundColor: "#006600",
+    color: 'white',
+    alignSelf: 'center',
+    marginTop: 20,
+    backgroundColor: '#006600',
     paddingLeft: 70,
     paddingRight: 70,
     paddingTop: 10,
     paddingBottom: 10,
     borderRadius: 10,
-    marginTop: 60,
-    
+    marginVertical: 30,
   },
   logo: {
-    width: 423 / 4, 
-    height: 153 / 4, 
-    alignSelf: "center", 
+    width: 423 / 4,
+    height: 153 / 4,
+    alignSelf: 'center',
     marginTop: 350,
-
   },
-  btn: {
+  menu: {
     paddingLeft: 55,
     paddingTop: 5,
     borderRadius: 5,
@@ -111,16 +114,12 @@ const styles = StyleSheet.create({
     color: 'white',
     fontSize: 20,
     fontWeight: 600,
-
-    
-
   },
   button: {
     color: 'white',
     fontSize: 20,
     fontWeight: 700,
     alignSelf: 'center',
-    
   },
 });
 

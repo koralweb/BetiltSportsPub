@@ -11,6 +11,7 @@ import CartScreen from './src/screens/CartScreen';
 import ContactsScreen from './src/screens/ContactsScreen';
 import MatchesScreen from './src/screens/MatchesScreen';
 import ShopScreen from './src/screens/ShopScreen';
+import ThankYouScreen from './src/screens/ThankYouScreen';
 
 library.add(faBars, faShoppingBasket, faClose);
 
@@ -28,6 +29,7 @@ const screens = [
   {name: 'Contacts', component: ContactsScreen},
   {name: 'Matches', component: MatchesScreen},
   {name: 'Shop', component: ShopScreen},
+  {name: 'ThankYou', component: ThankYouScreen},
 ];
 
 function App() {

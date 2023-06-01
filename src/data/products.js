@@ -5,6 +5,7 @@ const products = [
     cost: 11,
     type: 'Soup',
   },
+
   {
     name: 'Сырный крем-суп',
     img: require('../assets/products/s2.webp'),

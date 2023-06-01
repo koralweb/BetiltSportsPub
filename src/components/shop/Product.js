@@ -42,22 +42,23 @@ const styles = StyleSheet.create({
   prodImg: {
     width: 100,
     height: 100,
-    marginLeft: 30,
+    marginLeft: 'auto',
+    marginRight: 'auto',
+    marginTop: 10,
   },
   title: {
     fontSize: 13,
     fontWeight: 500,
-    color: "black",
+    color: 'black',
     paddingLeft: 5,
     paddingTop: 5,
   },
   price: {
     fontSize: 15,
     fontWeight: 500,
-    color: "#006600",
+    color: '#006600',
     paddingRight: 5,
     paddingTop: 5,
-
   },
   nameCost: {
     flexDirection: 'row',
@@ -68,11 +69,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginBottom: 10,
-   
   },
   btn: {
-    backgroundColor: "#006600",
-    color: "white",
+    backgroundColor: '#006600',
+    color: 'white',
     fontSize: 20,
     fontWeight: 600,
     paddingLeft: 20,
@@ -81,8 +81,8 @@ const styles = StyleSheet.create({
     paddingBottom: 5,
   },
   btns: {
-    backgroundColor: "#06D906",
-    color: "white",
+    backgroundColor: '#06D906',
+    color: 'white',
     fontSize: 20,
     fontWeight: 600,
     paddingLeft: 20,

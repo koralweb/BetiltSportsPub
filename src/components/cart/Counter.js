@@ -13,11 +13,15 @@ const Counter = ({prod}) => {
 
   return (
     <View style={styles.cont}>
-      <TouchableOpacity onPress={() => changeCnt(false)}>
+      <TouchableOpacity
+        style={{...styles.textBlockAll, ...styles.textmBlock}}
+        onPress={() => changeCnt(false)}>
         <Text style={styles.textm}>-</Text>
       </TouchableOpacity>
       <Text style={styles.amount}>{cnt}</Text>
-      <TouchableOpacity onPress={() => changeCnt(true)}>
+      <TouchableOpacity
+        style={{...styles.textBlockAll, ...styles.textBlock}}
+        onPress={() => changeCnt(true)}>
         <Text style={styles.text}>+</Text>
       </TouchableOpacity>
     </View>
@@ -28,34 +32,32 @@ const styles = StyleSheet.create({
   cont: {
     flexDirection: 'row',
     paddingLeft: 230, // уточнить как лучше подвинуть
-    
-    
+    alignItems: 'center',
+  },
+  textBlockAll: {
+    borderRadius: 50,
+    borderWidth: 1,
+    marginLeft: 5,
+    marginRight: 5,
+    marginBottom: 10,
+    width: 30,
+    height: 30,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  textBlock: {
+    backgroundColor: '#006600',
   },
   text: {
     fontSize: 20,
-    borderRadius: 50,
-    borderWidth: 1,
-    paddingLeft: 10,
-    paddingRight: 10,
-    marginLeft: 5,
-    marginRight: 5,
-    marginBottom: 10,
-    backgroundColor: "#006600",
-    color: "white",
-
+    color: 'white',
+  },
+  textmBlock: {
+    borderColor: '#006600',
   },
   textm: {
     fontSize: 20,
-    borderRadius: 50,
-    borderWidth: 1,
-    paddingLeft: 13,
-    paddingRight: 13,
-    marginLeft: 5,
-    marginRight: 5,
-    marginBottom: 10,
-    borderColor: "#006600",
-    color: "#006600",
-
+    color: '#006600',
   },
   amount: {
     fontSize: 20,
@@ -63,9 +65,8 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 5,
     marginBottom: 10,
-    color: "black",
+    color: 'black',
   },
-
 });
 
 export default Counter;

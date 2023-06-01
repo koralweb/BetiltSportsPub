@@ -22,6 +22,13 @@ class ProductsList {
     this.list.find(el => el.id === id).added = false;
   }
 
+  removeAllProducts() {
+    this.list.forEach(el => {
+      el.added = false;
+      el.count = 1;
+    });
+  }
+
   refreshCount(id) {
     this.list.find(el => el.id === id).count = 1;
   }
@@ -32,6 +39,7 @@ class ProductsList {
       addProduct: action,
       removeProduct: action,
       refreshCount: action,
+      removeAllProducts: action,
     });
   }
 }
