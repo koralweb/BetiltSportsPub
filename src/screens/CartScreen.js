@@ -34,14 +34,14 @@ const CartScreen = ({navigation}) => {
       <Header navigation={navigation} />
 
       <ScrollView style={{paddingBottom: 20}}>
-        <Text style={styles.title}>Корзина</Text>
+        <Text style={styles.title}>Cesta</Text>
         {empty ? (
           <>
             <Text style={styles.text}>
-              Ваша корзина пустая - перейти в меню?
+              Seu carrinho está vazio - ir para o menu?
             </Text>
             <TouchableOpacity onPress={() => navigation.push('Shop')}>
-              <Text style={styles.menu}>Меню</Text>
+              <Text style={styles.menu}>Menu</Text>
             </TouchableOpacity>
             <Image source={require('../assets/Logo.png')} style={styles.logo} />
           </>
@@ -52,7 +52,7 @@ const CartScreen = ({navigation}) => {
               <TouchableOpacity
                 style={styles.btn}
                 onPress={() => navigation.push('Booking', {fromCart: true})}>
-                <Text style={styles.button}>Подтвердить</Text>
+                <Text style={styles.button}>Confirme</Text>
               </TouchableOpacity>
             </View>
           </>

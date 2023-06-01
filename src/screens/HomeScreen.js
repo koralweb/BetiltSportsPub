@@ -9,22 +9,22 @@ const HomeScreen = ({navigation}) => {
       <TouchableOpacity
         style={styles.listBlock}
         onPress={() => navigation.push('Shop')}>
-        <Text style={styles.list}>Магазин</Text>
+        <Text style={styles.list}>Comprar</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.listBlock}
         onPress={() => navigation.push('Booking')}>
-        <Text style={styles.list}>Бронь столика</Text>
+        <Text style={styles.list}>Reserva de mesa</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.listBlock}
         onPress={() => navigation.push('Matches')}>
-        <Text style={styles.list}>Трансляции</Text>
+        <Text style={styles.list}>Transmissões</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.listBlock}
         onPress={() => navigation.push('Contacts')}>
-        <Text style={styles.list}>Контакты</Text>
+        <Text style={styles.list}>Contatos</Text>
       </TouchableOpacity>
       <Image source={require('../assets/Logo.png')} style={styles.logo} />
     </View>

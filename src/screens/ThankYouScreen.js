@@ -16,15 +16,15 @@ const ThankYouScreen = ({navigation, route}) => {
     <View>
       <Header navigation={navigation} />
 
-      <Text style={style.title}>Спасибо за ваш заказ!</Text>
+      <Text style={style.title}>Obrigado pelo seu pedido!</Text>
       <Text style={{textAlign: 'center'}}>
-        Наши менеджеры свяжутся с вами в ближайшее время
+        Nossos gerentes entrarão em contato com você em breve
       </Text>
 
       <TouchableOpacity
         style={style.checkout}
         onPress={() => navigation.push('Home')}>
-        <Text style={style.button}>На главную</Text>
+        <Text style={style.button}>Para a página inicial</Text>
       </TouchableOpacity>
       <Image source={require('../assets/Logo.png')} style={style.logo} />
     </View>

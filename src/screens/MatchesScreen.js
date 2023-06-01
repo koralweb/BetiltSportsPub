@@ -57,7 +57,6 @@ const MatchesScreen = ({navigation}) => {
     fetch('https://betiltsportspub.site/request.php')
       .then(res => res.json())
       .then(data => {
-        console.log(data);
         setTranslations(data);
       })
       .catch(err => console.log(err));
@@ -66,7 +65,7 @@ const MatchesScreen = ({navigation}) => {
   return (
     <>
       <Header navigation={navigation} />
-      <Text style={styles.title}>Спортивные трансляции</Text>
+      <Text style={styles.title}>Transmissões esportivas</Text>
       <View style={styles.itemsBlock}>{renderDates()}</View>
 
       <ScrollView>

@@ -61,9 +61,8 @@ const styles = StyleSheet.create({
     paddingTop: 5,
   },
   nameCost: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
     paddingBottom: 15,
+    alignItems: 'center',
   },
   counterBtn: {
     flexDirection: 'row',

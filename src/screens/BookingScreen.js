@@ -29,42 +29,38 @@ const BookingScreen = ({navigation, route}) => {
     <View>
       <Header navigation={navigation} />
 
-      <Text style={style.title}>
-        {fromCart ? 'Оформление заказа' : 'Бронирование'}
-      </Text>
+      <Text style={style.title}>{fromCart ? 'Confira' : 'Reserva'}</Text>
 
       <View style={style.input}>
-        <TextInput placeholder="Имя" style={style.textInput} />
+        <TextInput placeholder="Nome" style={style.textInput} />
         <TouchableOpacity style={style.btn}>
-          <Text style={style.btntext}>Имя</Text>
+          <Text style={style.btntext}>Nome</Text>
         </TouchableOpacity>
       </View>
 
       <View style={style.input}>
-        <TextInput placeholder="+000 000" style={style.textInput} />
+        <TextInput placeholder="+350 00 000 0000" style={style.textInput} />
         <TouchableOpacity style={style.btn}>
-          <Text style={style.btntext}>Телефон</Text>
+          <Text style={style.btntext}>Telefone</Text>
         </TouchableOpacity>
       </View>
 
       <View style={style.input}>
-        <TextInput placeholder="Электронная почта" style={style.textInput} />
+        <TextInput placeholder="E-mail" style={style.textInput} />
         <TouchableOpacity style={style.btn}>
-          <Text style={style.btntext}>Почта</Text>
+          <Text style={style.btntext}>E-mail</Text>
         </TouchableOpacity>
       </View>
 
       <View style={style.input}>
-        <TextInput placeholder="Дата и время" style={style.textInput} />
+        <TextInput placeholder="Data e hora" style={style.textInput} />
         <TouchableOpacity style={style.btn}>
-          <Text style={style.btntext}>Дата и время</Text>
+          <Text style={style.btntext}>Data e hora</Text>
         </TouchableOpacity>
       </View>
 
       <TouchableOpacity style={style.checkout} onPress={order}>
-        <Text style={style.button}>
-          {fromCart ? 'Оформить' : 'Забронировать'}
-        </Text>
+        <Text style={style.button}>{fromCart ? 'Confira' : 'Reserva'}</Text>
       </TouchableOpacity>
       <Image source={require('../assets/Logo.png')} style={style.logo} />
     </View>

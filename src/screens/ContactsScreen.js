@@ -8,19 +8,19 @@ const ContactsScreen = ({navigation}) => {
     <View style={{flex: 1}}>
       <Header navigation={navigation} />
 
-      <Text style={styles.title}>Контакты</Text>
+      <Text style={styles.title}>Contatos</Text>
 
       <View style={styles.cont}>
         <Text style={styles.titleitem}>DIRECCIÓN</Text>
         <Text style={styles.item}>
-          Av. del Dr. Peset Aleixandre, 75, 46009 València, Valencia, Spain
+          R. São Sebastião da Pedreira, 1050-210 Lisboa, Portugal
         </Text>
 
         <Text style={styles.titleitem}>Teléfono</Text>
-        <Text style={styles.item}>+34 961 13 30 39</Text>
+        <Text style={styles.item}>+351 21 319 9500</Text>
 
         <Text style={styles.titleitem}>Horas Laborales</Text>
-        <Text style={styles.item}>08:00 - 04:00</Text>
+        <Text style={styles.item}>00:00 - 24:00</Text>
       </View>
       <Image source={require('../assets/Logo.png')} style={styles.logo} />
     </View>
