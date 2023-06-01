@@ -13,9 +13,9 @@ git init
 git remote add origin https://github.com/koralweb/BetiltSportsPub.git
 
 // Удаляем эти 3 файла:
-  -- App.tsx
-  -- .gitignore
-  -- android/app/src/main/java/com/BetiltSportsPub/MainActivity.java
+  rm App.tsx
+  rm .gitignore
+  rm android/app/src/main/java/com/BetiltSportsPub/MainActivity.java
 
 git branch -M dev
 git pull origin dev
